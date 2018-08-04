@@ -5,7 +5,7 @@ var uuid = require('uuid');
 // Create unique bucket name
 var bucketName = 'suestra-sdk-sample';
 // Create name for uploaded object key
-var keyName = uuid.v4() + 'suestra.txt';
+var keyName = uuid.v4() + '-suestra.txt';
 
 // Create a promise on S3 service object
 var bucketPromise = new AWS.S3({apiVersion: '2006-03-01'}).createBucket({Bucket: bucketName}).promise();
