@@ -42,11 +42,11 @@ module.exports = function (app) {
     });
 
     // delete a todo
-    app.delete('/api/todos/:todo_id', function (req, res) {
+    app.delete('/api/todos', function (req, res) {
         res.header("Access-Control-Allow-Origin", "*");
         res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
         Todo.remove({
-            _id: req.params.todo_id
+            _id: req.query.id
         }, function (err, todo) {
             if (err)
                 res.send(err);
