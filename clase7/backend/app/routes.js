@@ -18,12 +18,15 @@ module.exports = function (app) {
     // get all todos
     app.get('/api/todos', function (req, res) {
         // use mongoose to get all todos in the database
+        res.header("Access-Control-Allow-Origin", "*");
+        res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
         getTodos(res);
     });
 
     // create todo and send back all todos after creation
     app.post('/api/todos', function (req, res) {
-
+         res.header("Access-Control-Allow-Origin", "*");
+         res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");  
         // create a todo, information comes from AJAX request from Angular
         Todo.create({
             text: req.body.text,
@@ -40,6 +43,8 @@ module.exports = function (app) {
 
     // delete a todo
     app.delete('/api/todos/:todo_id', function (req, res) {
+        res.header("Access-Control-Allow-Origin", "*");
+        res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
         Todo.remove({
             _id: req.params.todo_id
         }, function (err, todo) {
@@ -52,6 +57,8 @@ module.exports = function (app) {
 
     // application -------------------------------------------------------------
     app.get('*', function (req, res) {
+        res.header("Access-Control-Allow-Origin", "*");
+        res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
         res.sendFile(__dirname + '/public/index.html'); // load the single view file (angular will handle the page changes on the front-end)
     });
 };

@@ -11,7 +11,7 @@ angular.module('todoService', [])
 				return $http.post('https://api.raul.suestra.io/api', todoData);
 			},
 			delete : function(id) {
-				return $http.delete('https://api.raul.suestra.io/api' + id);
+				return $http.delete('https://api.raul.suestra.io/api/' + id);
 			}
 		}
 	}]);
