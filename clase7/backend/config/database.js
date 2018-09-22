@@ -1,4 +1,4 @@
 module.exports = {
-    remoteUrl : 'mongodb://18.221.175.212/deseosdb',
-    localUrl: 'mongodb://18.221.175.212/deseosdb'
+    remoteUrl : 'mongodb://18.217.169.142/deseosdb',
+    localUrl: 'mongodb://18.217.169.142/deseosdb'
 };
