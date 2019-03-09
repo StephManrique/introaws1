@@ -5,13 +5,13 @@ angular.module('todoService', [])
 	.factory('Todos', ['$http',function($http) {
 		return {
 			get : function() {
-				return $http.get('https://api.raul.suestra.io/api');
+				return $http.get('https://api.steph.idmatec.com/api');
 			},
 			create : function(todoData) {
-				return $http.post('https://api.raul.suestra.io/api', todoData);
+				return $http.post('https://api.steph..idmatec.com/api', todoData);
 			},
 			delete : function(id) {
-				return $http.delete('https://api.raul.suestra.io/api?id=' + id);
+				return $http.delete('https://api.steph.idmatec.com/api?id=' + id);
 			}
 		}
 	}]);
